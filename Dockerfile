@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+WORKDIR /app/cmd-football-backend
+
 RUN mvn clean install
 
 CMD ["mvn", "exec:java", "-Dexec.mainClass=com.cmdfootball.Server"]
