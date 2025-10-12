@@ -1,0 +1,308 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.auth-forms {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+form {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+form h3 {
+  margin-top: 0;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.scoreboard-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.score-box {
+  background: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.score-box span {
+  font-size: 32px;
+  display: block;
+  margin: 10px 0;
+}
+@media (max-width: 768px) {
+  .auth-forms,
+  .scoreboard-grid,
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form,
+  .score-box,
+  .gallery img {
+    width: 90%;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  section {
+    padding: 20px;
+  }
+}#contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form input,
+#contact-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#contact-form button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+#session-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#session-form input,
+#session-form select,
+#session-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+.drill-options {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.drill-options label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.drill-options img {
+  width: 150px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+@media (max-width: 600px) {
+  header, section, footer {
+    padding: 15px;
+  }
+
+  .auth-forms,
+  .scoreboard-grid,
+  .gallery,
+  .session-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  form input,
+  form textarea,
+  form select,
+  form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .session-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+}
+.tooltip {
+  position: absolute;
+  background: #ffd700;
+  color: #000;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+#cmd-showcase {
+  background: linear-gradient(to right, #000, #333);
+  color: #ffd700;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+}
+#club-profile {
+  background: linear-gradient(to right, #111, #333);
+  color: #ffd700;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+.drill-block {
+  background: #ffd700;
+  padding: 10px;
+  margin: 5px;
+  cursor: grab;
+}
+#session-dropzone {
+  border: 2px dashed #ccc;
+  min-height: 100px;
+  padding: 10px;
+}
+.drill-block {
+  background: #ffd700;
+  padding: 10px;
+  margin: 5px;
+  cursor: grab;
+}
+#session-dropzone {
+  border: 2px dashed #ccc;
+  min-height: 100px;
+  padding: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+thead {
+  background-color: #f2f2f2;
+}
+.player-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.badge {
+  background: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0 0 5px #28a745;
+}
+.unlocked {
+  color: green;
+  font-weight: bold;
+}
+.locked {
+  color: red;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  input, select, button {
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.player-card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+@media (max-width: 600px) {
+  #mobile-tournament input,
+  #mobile-tournament select,
+  #mobile-tournament button {
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

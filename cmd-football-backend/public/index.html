@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+   <img src="images/cmd-logo.jpg" alt="CMD Football Logo" style="width:120px; margin-bottom:10px;"> 
+  <meta charset="UTF-8">
+  
+  <title>CMD Football Soccer Program</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<a href="/api/export" download="players_export.csv">
+  <button>📥 Download All Players</button>
+</a>
+<body>
+  <header>
+    <h1>CMD FOOTBALL</h1>
+    <p>Structure the game. Inspire coaches. Raise the standard.</p>
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#coach-space">Coach Space</a>
+      <a href="#contact">Contact</a>
+      <a href="#AboutUs">AboutUs</a>
+    </nav>
+  </header>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <!-- 🔥 About Us Section -->
+  <section id="about" style="padding: 40px 20px;">
+    <h2>About CMD Football</h2>
+    <p>
+      CMD Football was born from a simple but powerful idea: that youth soccer deserves professional-grade tools, tactical clarity, and emotional impact. Founded by coaches, for coaches, CMD blends technical excellence with intuitive design — empowering teams to train smarter, track progress, and build a lasting identity.
+    </p>
+    <p>
+      We believe coaching is more than drills and data. It’s mentorship, storytelling, and structure. That’s why CMD delivers dynamic dashboards, tactical engines, and visual overlays that help coaches communicate with precision and players grow with purpose.
+    </p>
+    <p>
+      Whether you're managing a grassroots team or preparing for federation-level competition, CMD Football gives you the tools to elevate your program, inspire your players, and raise the standard across the game.
+    </p>
+    <p><strong>CMD Football:</strong> Structure the game. Inspire coaches. Raise the standard.</p>
+  </section>
+  <form id="register-form">
+  <input type="text" name="fullName" placeholder="Full Name" required />
+  <input type="date" name="dob" required />
+  <input type="text" name="team" placeholder="Team Name" required />
+  <input type="text" name="position" placeholder="Position" />
+  <input type="number" name="level" placeholder="Level" />
+  <button type="submit">Register Player</button>
+</form>
+
+  <!-- Other sections like #tools, #coach, #contact go here -->
+</body>
+</html>
+<section id="exam" style="padding: 40px 20px; background-color:#f9f9f9;">
+<a href="#exam">Exam</a>
+<section id="exam" style="padding: 40px 20px;">
+  <img src="images/cmd-logo.jpg" alt="CMD Football Logo" style="width:120px; margin-bottom:10px;">
+  <h2>Sunday Juggling Exam</h2>
+  <p>Every Sunday, players take part in a structured juggling exam to unlock their next level. Each level challenges players with a specific juggling count and technique. There are 13 levels in total, culminating in freestyle mastery.</p>
+<section id="exam" style="padding: 40px 20px; background-color:#f9f9f9;">
+  <table style="width:100%; border-collapse: collapse; margin-top:20px;">
+    <thead>
+      <tr style="background-color:#f2f2f2;">
+        <th style="padding:10px; border:1px solid #ccc;">Level</th>
+        <th style="padding:10px; border:1px solid #ccc;">Name</th>
+        <th style="padding:10px; border:1px solid #ccc;">Required Juggles</th>
+        <th style="padding:10px; border:1px solid #ccc;">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>BasicJuggling</td><td>620</td><td>Foundation level</td></tr>
+      <tr><td>2</td><td>ExtInt</td><td>270</td><td>Exterior/Interior control</td></tr>
+      <tr><td>3</td><td>Alternate</td><td>190</td><td>Left/right alternation</td></tr>
+      <tr><td>4</td><td>Sequence2</td><td>630</td><td>Two-move juggling sequence</td></tr>
+      <tr><td>5</td><td>Sequence2Combo</td><td>480</td><td>Combo variation of Sequence2</td></tr>
+      <tr><td>6</td><td>Sequence3</td><td>450</td><td>Three-move juggling sequence</td></tr>
+      <tr><td>7</td><td>Sequence3Combo</td><td>300</td><td>Combo variation of Sequence3</td></tr>
+      <tr><td>8</td><td>Sequence4</td><td>120</td><td>Four-move juggling sequence</td></tr>
+      <tr><td>9</td><td>Ladder</td><td>100</td><td>Progressive juggling steps</td></tr>
+      <tr><td>10</td><td>1stDegree</td><td>100</td><td>Advanced control</td></tr>
+      <tr><td>11</td><td>2ndDegree</td><td>100</td><td>Elite rhythm and balance</td></tr>
+      <tr><td>12</td><td>3rdDegree</td><td>100</td><td>Mastery level</td></tr>
+      <tr><td>13</td><td>Freestyle Creation</td><td>Custom</td><td>Player must design and perform their own juggling sequence using freestyle technique</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:20px;"><strong>Note:</strong> Coaches should log each player's progress weekly and provide feedback on technique, rhythm, and creativity — especially at Level 13.</p>
+</section>
+<select id="filter-team">
+  <option value="">All Teams</option>
+  <option value="U9">U9</option>
+  <option value="U13">U13</option>
+  <option value="U17">U17</option>
+</select>
+
+<select id="filter-coach">
+  <option value="">All Coaches</option>
+  <option value="Coach Mo">Coach Mo</option>
+  <option value="Coach Sam">Coach Sam</option>
+</select>
+<div id="sort-controls" style="margin-bottom: 20px;">
+  <label>Sort by:</label>
+  <select id="sort-by">
+    <option value="date">Date</option>
+    <option value="level">Level</option>
+  </select>
+  <button onclick="applySort()">Sort</button>
+</div>
+<div id="search-bar" style="margin-bottom: 20px;">
+  <input type="text" id="search-player" placeholder="Search by player name">
+  <button onclick="applySearch()">Search</button>
+</div>
+<section id="mobile-dashboard" style="padding:20px;">
+  <h2>Live Exam Logging</h2>
+  
+     <form id="exam-form">
+  <input type="text" placeholder="Player Name" required>
+  <select name="coach" id="coach-select" readonly disabled>
+  <option value="">Select Coach</option>
+  <option value="Coach Mo">Coach Mo</option>
+  <option value="Coach Sam">Coach Sam</option>
+  <option value="Coach Lina">Coach Lina</option>
+</select>
+
+  <!-- ✅ Add these two dropdowns here -->
+  <select name="team" required>
+    <option value="">Select Team</option>
+    <option value="U9">U9</option>
+    <option value="U13">U13</option>
+    <option value="U17">U17</option>
+  </select>
+
+  <select name="coach" required>
+    <option value="">Select Coach</option>
+    <option value="Coach Mo">Coach Mo</option>
+    <option value="Coach Sam">Coach Sam</option>
+  </select>
+
+  <select required>
+    <option value="1">BasicJuggling</option>
+    <!-- etc -->
+  </select>
+
+  <input type="number" placeholder="Juggle Count" required>
+  <input type="date" required>
+  <textarea placeholder="Coach Feedback (optional)"></textarea>
+  <button type="submit">Log Result</button>
+</form>
+</section>
+<!-- Exam Log Display -->
+<div id="exam-log" style="margin-top:20px;"></div>
+
+<!-- ✅ Export Buttons -->
+<div id="export-buttons" style="margin-top: 20px;">
+  <button onclick="exportToPDF()">Export PDF</button>
+  <button onclick="exportToCSV()">Export CSV</button>
+</div>
+<section id="freestyle-submission">
+  <h2>Level 13: Freestyle Submission</h2>
+  <form id="freestyle-form">
+    <input type="text" placeholder="Player Name" required>
+    <input type="url" placeholder="Video URL (YouTube, Vimeo)" required>
+    <textarea placeholder="Describe your freestyle technique"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div id="freestyle-log"></div>
+</section>
+<canvas id="timelineChart" width="600" height="300"></canvas>
+<section id="exam-tracker" style="padding: 40px 20px;">
+  <img src="images/cmd-logo.jpg" alt="CMD Football Logo" style="width:120px; margin-bottom:10px;">
+  <h2>Player Exam Tracker</h2>
+  <form id="exam-form">
+    <form id="exam-form" enctype="multipart/form-data">
+  <input type="text" placeholder="Player Name" required>
+  <input type="file" accept="image/*" id="player-photo">
+  <!-- rest of your fields -->
+</form>
+    <input type="text" placeholder="Player Name" required>
+    <select required>
+      <option value="1">BasicJuggling</option>
+      <option value="2">ExtInt</option>
+      <option value="3">Alternate</option>
+      <option value="4">Sequence2</option>
+      <option value="5">Sequence2Combo</option>
+      <option value="6">Sequence3</option>
+      <option value="7">Sequence3Combo</option>
+      <option value="8">Sequence4</option>
+      <option value="9">Ladder</option>
+      <option value="10">1stDegree</option>
+      <option value="11">2ndDegree</option>
+      <option value="12">3rdDegree</option>
+      <option value="13">Freestyle Creation</option>
+    </select>
+    <input type="number" placeholder="Juggle Count" required>
+    <button type="submit">Log Result</button>
+    <p>Badge: ${getBadge(entry.level)}</p>
+  </form>
+  <div id="exam-log"></div>
+</section>
+<canvas id="progressChart" width="400" height="200"></canvas>
+<div class="player-card">
+  <img src="player-photo.jpg" class="player-photo">
+  <h3>Mohamadou</h3>
+  <p>Level 6: Sequence3</p>
+  <p>Juggles: 470 / Required: 450</p>
+  <p>Date: 2025-10-05</p>
+  <p>Coach Feedback: “Excellent rhythm and control.”</p>
+  <p>Status: <span class="unlocked">Unlocked ✅</span></p>
+  <p>Badge: 🏅 <span class="badge">Sequence3</span></p>
+</div>
+<section id="coach-dashboard" style="margin-top:40px;">
+  <h2>Coach Dashboard</h2>
+  <div id="dashboard-stats"></div>
+  <canvas id="levelChart" width="400" height="200"></canvas>
+  <canvas id="unlockChart" width="400" height="200"></canvas>
+  <div id="dashboard-export" style="margin-top: 20px;">
+  <button onclick="exportDashboardPDF()">Export Dashboard PDF</button>
+  <button onclick="exportDashboardCSV()">Export Dashboard CSV</button>
+</div>
+</section>
+<section id="team-comparison" style="margin-top:40px;">
+  <h2>Team Comparison</h2>
+  <canvas id="teamChart" width="600" height="300"></canvas>
+</section>
+<section id="coach-leaderboard" style="margin-top:40px;">
+  <h2>Coach Leaderboard</h2>
+  <table id="leaderboard-table" border="1" cellpadding="6"></table>
+</section>
+<section id="mobile-tournament" style="padding:20px;">
+  <h2>Live Tournament Tracker</h2>
+  <input type="text" placeholder="Player Name">
+  <input type="number" placeholder="Juggle Count">
+  <select>
+    <option value="1">BasicJuggling</option>
+    <!-- etc -->
+  </select>
+  <select name="team">
+    <option value="U9">U9</option>
+    <!-- etc -->
+  </select>
+  <button>Log Result</button>
+</section>
+<section id="live-scoreboard" style="margin-top:40px;">
+  <h2>Live Tournament Scoreboard</h2>
+  <table id="scoreboard-table" border="1" cellpadding="6"></table>
+</section>
+<section id="player-spotlight" style="margin-top:40px;">
+  <h2>Player Spotlight</h2>
+  <div id="spotlight-card"></div>
+</section>
+<section id="team-spotlight" style="margin-top:40px;">
+  <h2>Team Spotlight</h2>
+  <div id="team-spotlight-card"></div>
+</section>
+<section id="coach-spotlight" style="margin-top:40px;">
+  <h2>Coach Spotlight</h2>
+  <div id="coach-spotlight-card"></div>
+</section>
+<section id="mobile-scoreboard" style="margin-top:40px;">
+  <h2>Live Mobile Scoreboard</h2>
+  <table id="mobile-scoreboard-table" border="1" cellpadding="6"></table>
+</section>
+<section id="qr-launcher" style="margin-top:40px;">
+  <h2>Mobile Scoreboard Access</h2>
+  <canvas id="qrCanvas"></canvas>
+  <p>Scan this QR code to open the live scoreboard on your phone.</p>
+</section>
+<section id="spotlight-carousel" style="margin-top:40px;">
+  <h2>Top Performers</h2>
+  <div id="carousel-container"></div>
+</section>
+<section id="announcer-mode" style="margin-top:40px;">
+  <h2>Live Announcer Mode</h2>
+  <div id="announcer-feed" style="font-size:24px; font-weight:bold;"></div>
+</section>
+  <section id="tools">
+    <h2>Our Tools</h2>
+    <ul>
+      <li><strong>DrillGenerator</strong> – Create tactical cards with scoring logic</li>
+      <li><strong>Tactical Engine</strong> – Build U7–U20 sessions with modular logic</li>
+      <li><strong>Scoreboard Tracker</strong> – Track bonus/malus and performance</li>
+      <li><strong>Diagram Library</strong> – Access all game formats with visual clarity</li>
+    </ul>
+  </section>
+
+  <!-- 🔽 Add your Coach Space section here -->
+  <section id="coach-space">
+    <h2>Coach Space</h2>
+    <p>Log in to access your tactical resources, build sessions, and track player progress.</p>
+
+    <div class="auth-forms">
+      <form id="login-form">
+        <h3>Login</h3>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="register-form">
+        <h3>Register</h3>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Create Password" required>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 CMD Football. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+<section id="drill-gallery">
+  <h2>Drill Gallery</h2>
+  <div class="gallery">
+    <img src="drills/C0.1A5.png" alt="Drill C0.1A5">
+    <img src="drills/C0.2B3.png" alt="Drill C0.2B3">
+    <img src="drills/C0.3D1.png" alt="Drill C0.3D1">
+  </div>
+</section>
+<section id="scoreboard">
+  <h2>Scoreboard Tracker</h2>
+  <div class="scoreboard-grid">
+    <div class="score-box">
+      <h3>Bonus</h3>
+      <span id="bonus-count">0</span>
+      <button onclick="updateScore('bonus', 1)">+1</button>
+      <button onclick="updateScore('bonus', -1)">-1</button>
+    </div>
+    <div class="score-box">
+      <h3>Malus</h3>
+      <span id="malus-count">0</span>
+      <button onclick="updateScore('malus', 1)">+1</button>
+      <button onclick="updateScore('malus', -1)">-1</button>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+<section id="session-builder">
+  <h2>Session Builder</h2>
+  <form id="session-form">
+    <input type="text" placeholder="Session Title" required>
+    <select required>
+      <option value="">Select Age Group</option>
+      <option value="U7">U7</option>
+      <option value="U9">U9</option>
+      <option value="U11">U11</option>
+      <option value="U13">U13</option>
+      <option value="U15">U15</option>
+      <option value="U17">U17</option>
+      <option value="U20">U20</option>
+    </select>
+    <textarea placeholder="Session Objectives" required></textarea>
+    <button type="submit">Save Session</button>
+  </form>
+</section>
+<form id="session-form">
+  <!-- existing fields -->
+</form>
+<div class="drill-preview">
+  <h3>Select a Drill</h3>
+  <div class="drill-options">
+    <label>
+      <input type="radio" name="drill" value="C0.1A5">
+      <img src="drills/C0.1A5.png" alt="Drill C0.1A5">
+    </label>
+    <label>
+      <input type="radio" name="drill" value="C0.2B3">
+      <img src="drills/C0.2B3.png" alt="Drill C0.2B3">
+    </label>
+  </div>
+</div>
+<form id="contact-form">
+  <input type="text" name="user_name" placeholder="Your Name" required>
+  <input type="email" name="user_email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+<section id="coach-dashboard">
+  <h2>Coach Dashboard</h2>
+  <div id="player-list"></div>
+  <form id="player-form">
+    <input type="text" placeholder="Player Name" required>
+    <input type="number" placeholder="Score" required>
+    <button type="submit">Add Player</button>
+  </form>
+</section>
+<button onclick="exportSessions()">Export Sessions to CSV</button>
+<div id="dashboard-filters">
+  <input type="text" id="search-player" placeholder="Search player">
+  <select id="sort-score">
+    <option value="desc">High to Low</option>
+    <option value="asc">Low to High</option>
+  </select>
+</div>
+<button onclick="printCoachReport()">Print Report</button>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+</script>
+<section id="multi-drill-session">
+  <h2>Session Composer</h2>
+  <form id="composer-form">
+    <input type="text" placeholder="Session Title" required>
+    <select required>
+      <option value="">Select Age Group</option>
+      <option value="U7">U7</option>
+      <option value="U9">U9</option>
+      <!-- Add more -->
+    </select>
+
+    <div id="drill-selector">
+      <h3>Select Drills</h3>
+      <label><input type="checkbox" value="C0.1A5"> C0.1A5</label>
+      <label><input type="checkbox" value="C0.2B3"> C0.2B3</label>
+      <!-- Add more -->
+    </div>
+
+    <textarea placeholder="Session Objectives" required></textarea>
+    <button type="submit">Save Session</button>
+  </form>
+</section>
+<div id="medal-tracker">
+  <h3>Medal Logic</h3>
+  <label><input type="radio" name="medal" value="Gold"> Gold</label>
+  <label><input type="radio" name="medal" value="Silver"> Silver</label>
+  <label><input type="radio" name="medal" value="Bronze"> Bronze</label>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<button onclick="exportPDF()">Export PDF</button>
+<section id="federation">
+  <h2>For Federations & Clubs</h2>
+  <p>CMD Football is built to meet federation standards. Our tactical engine, scoring logic, and visual clarity empower coaches to deliver structured, measurable development at scale.</p>
+  <ul>
+    <li>📊 Data-driven player tracking</li>
+    <li>🎯 Modular drill design</li>
+    <li>🧠 Coach education resources</li>
+    <li>🔐 Secure coach space with session history</li>
+  </ul>
+  <button>Request a Demo</button>
+</section>
+<section id="session-viewer">
+  <h2>Saved Sessions</h2>
+  <input type="text" id="session-search" placeholder="Search by title">
+  <select id="session-filter">
+    <option value="">All Age Groups</option>
+    <option value="U7">U7</option>
+    <option value="U9">U9</option>
+    <!-- Add more -->
+  </select>
+  <div id="session-list"></div>
+</section>
+<form id="player-form">
+  <input type="text" placeholder="Player Name" required>
+  <input type="number" placeholder="Score" required>
+  <textarea placeholder="Coach Notes"></textarea>
+  <button type="submit">Add Player</button>
+</form>
+<section id="player-profile">
+  <h2>Player Profile</h2>
+  <select id="player-select"></select>
+  <div id="profile-details"></div>
+</section>
+<section id="drill-tags">
+  <h2>Drill Library</h2>
+  <select id="tag-filter">
+    <option value="">All Categories</option>
+    <option value="Passing">Passing</option>
+    <option value="Defending">Defending</option>
+    <option value="Finishing">Finishing</option>
+  </select>
+  <div id="drill-list"></div>
+</section>
+<section id="session-calendar">
+  <h2>Session Timeline</h2>
+  <div id="calendar-list"></div>
+</section>
+<button onclick="exportPlayerPDF(selectedPlayer)">Export Profile</button>
+<div class="tooltip" id="tooltip-tools">Explore tactical tools here</div>
+<div class="tooltip" id="tooltip-coach">Access your coach space here</div>
+<canvas id="scoreChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const players = JSON.parse(localStorage.getItem('cmdPlayers')) || [];
+const labels = players.map(p => p.name);
+const data = players.map(p => p.score);
+
+new Chart(document.getElementById('scoreChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [{
+      label: 'Player Scores',
+      data,
+      backgroundColor: '#ffd700'
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+</script>
+<section id="session-feedback">
+  <h2>Rate This Session</h2>
+  <form id="feedback-form">
+    <select required>
+      <option value="">Rating</option>
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="1">⭐</option>
+    </select>
+    <textarea placeholder="Coach feedback" required></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+</section>
+<section id="team-roster">
+  <h2>Team Roster</h2>
+  <form id="roster-form">
+    <input type="text" placeholder="Player Name" required>
+    <select required>
+      <option value="">Select Role</option>
+      <option value="Goalkeeper">Goalkeeper</option>
+      <option value="Defender">Defender</option>
+      <option value="Midfielder">Midfielder</option>
+      <option value="Forward">Forward</option>
+    </select>
+    <button type="submit">Add to Roster</button>
+  </form>
+  <div id="roster-list"></div>
+</section>
+<button onclick="printSessionSheet(selectedSession)">Print Session</button>
+<button onclick="generateShareLink()">Generate Share Link</button>
+<div id="share-output"></div>
+<section id="drill-builder">
+  <h2>Drill Builder</h2>
+  <canvas id="fieldCanvas" width="600" height="400"></canvas>
+  <button onclick="saveDrill()">Save Drill</button>
+</section>
+<button onclick="exportFederationPack()">Export Federation Pack</button>
+<section id="team-manager">
+  <h2>Team Manager</h2>
+  <form id="team-form">
+    <input type="text" placeholder="Team Name" required>
+    <input type="text" placeholder="Season (e.g. 2025–2026)" required>
+    <button type="submit">Create Team</button>
+  </form>
+  <div id="team-list"></div>
+</section>
+<section id="coach-certification">
+  <h2>Coach Progress</h2>
+  <ul id="badge-list"></ul>
+</section>
+<section id="club-dashboard">
+  <h2>Club Analytics</h2>
+  <div id="club-summary"></div>
+</section>
+<section id="cmd-showcase">
+  <h2>CMD Football Showcase</h2>
+  <p>Welcome to CMD Football — a tactical platform built by coaches, for coaches. Explore our tools, track your players, and elevate your game.</p>
+  <ul>
+    <li>⚙️ Drill Generator</li>
+    <li>📊 Scoreboard Tracker</li>
+    <li>🧠 Tactical Engine</li>
+    <li>🧾 Federation Export Pack</li>
+  </ul>
+  <button onclick="location.href='#contact'">Get Started</button>
+</section>
+<section id="player-comparison">
+  <h2>Compare Players</h2>
+  <select id="playerA"></select>
+  <select id="playerB"></select>
+  <div id="comparison-result"></div>
+</section>
+<button onclick="cloneSession()">Clone Last Session</button>
+<section id="drill-rating">
+  <h2>Rate Drill Difficulty</h2>
+  <select id="drill-select">
+    <option value="C0.1A5">C0.1A5</option>
+    <option value="C0.2B3">C0.2B3</option>
+  </select>
+  <select id="difficulty">
+    <option value="Easy">Easy</option>
+    <option value="Medium">Medium</option>
+    <option value="Hard">Hard</option>
+  </select>
+  <button onclick="rateDrill()">Save Rating</button>
+</section>
+<section id="coach-journal">
+  <h2>Coach Journal</h2>
+  <textarea id="journal-entry" placeholder="Write your thoughts..."></textarea>
+  <button onclick="saveJournal()">Save Entry</button>
+  <div id="journal-log"></div>
+</section>
+<section id="team-calendar">
+  <h2>Team Calendar</h2>
+  <form id="calendar-form">
+    <input type="date" required>
+    <input type="text" placeholder="Event Title" required>
+    <select required>
+      <option value="Training">Training</option>
+      <option value="Match">Match</option>
+    </select>
+    <button type="submit">Add Event</button>
+  </form>
+  <div id="calendar-events"></div>
+</section>
+<button onclick="exportTeamReport()">Export Team Report</button>
+<section id="development-tracker">
+  <h2>Player Development</h2>
+  <form id="dev-form">
+    <select id="dev-player">
+      <!-- Populated dynamically -->
+    </select>
+    <input type="text" placeholder="Skill or Milestone" required>
+    <input type="date" required>
+    <button type="submit">Add Progress</button>
+  </form>
+  <div id="dev-log"></div>
+</section>
+<section id="federation-dashboard">
+  <h2>Federation Overview</h2>
+  <div id="fed-summary"></div>
+</section>
+<section id="onboarding-wizard">
+  <h2>Welcome to CMD Football</h2>
+  <div id="wizard-step"></div>
+  <button onclick="nextStep()">Next</button>
+</section>
+<canvas id="heatmapCanvas" width="600" height="400"></canvas>
+<section id="drill-analytics">
+  <h2>Drill Performance</h2>
+  <select id="drill-select">
+    <option value="C0.1A5">C0.1A5</option>
+    <option value="C0.2B3">C0.2B3</option>
+  </select>
+  <div id="drill-stats"></div>
+</section>
+<section id="club-showcase">
+  <h2>CMD Football</h2>
+  <p>Empowering coaches. Elevating players. Built for federations.</p>
+  <ul>
+    <li>⚙️ Tactical Engine</li>
+    <li>📊 Drill Analytics</li>
+    <li>🧠 Coach Education</li>
+    <li>🧾 Federation Reports</li>
+  </ul>
+  <button onclick="location.href='#contact'">Join the Movement</button>
+</section>
+<section id="match-report">
+  <h2>Match Report</h2>
+  <form id="match-form">
+    <input type="date" required>
+    <input type="text" placeholder="Opponent" required>
+    <input type="number" placeholder="Team Score" required>
+    <input type="number" placeholder="Opponent Score" required>
+    <textarea placeholder="Coach Notes"></textarea>
+    <button type="submit">Save Report</button>
+  </form>
+  <div id="match-log"></div>
+</section>
+<section id="injury-tracker">
+  <h2>Injury Tracker</h2>
+  <form id="injury-form">
+    <select id="injured-player"></select>
+    <input type="text" placeholder="Injury Type" required>
+    <input type="date" placeholder="Injury Date" required>
+    <input type="date" placeholder="Expected Recovery" required>
+    <button type="submit">Log Injury</button>
+  </form>
+  <div id="injury-log"></div>
+</section>
+<section id="certification-tracker">
+  <h2>Coach Certification</h2>
+  <form id="cert-form">
+    <input type="text" placeholder="Coach Name" required>
+    <select required>
+      <option value="Level 1">Level 1</option>
+      <option value="Level 2">Level 2</option>
+      <option value="Level 3">Level 3</option>
+    </select>
+    <input type="date" required>
+    <button type="submit">Log Certification</button>
+  </form>
+  <div id="cert-log"></div>
+</section>
+<select id="language-switcher">
+  <option value="en">English</option>
+  <option value="fr">Français</option>
+  <option value="es">Español</option>
+</select>
+<section id="scouting-module">
+  <h2>Scouting & Recruitment</h2>
+  <form id="scout-form">
+    <input type="text" placeholder="Player Name" required>
+    <input type="number" placeholder="Age" required>
+    <input type="text" placeholder="Position" required>
+    <textarea placeholder="Strengths & Notes"></textarea>
+    <button type="submit">Add Prospect</button>
+  </form>
+  <div id="scout-list"></div>
+</section>
+<section id="chemistry-tracker">
+  <h2>Team Chemistry</h2>
+  <form id="chemistry-form">
+    <input type="text" placeholder="Player A" required>
+    <input type="text" placeholder="Player B" required>
+    <select required>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <button type="submit">Log Synergy</button>
+  </form>
+  <div id="chemistry-log"></div>
+</section>
+<section id="club-dashboard">
+  <h2>Club Performance</h2>
+  <div id="club-summary"></div>
+</section>
+<section id="match-kit">
+  <h2>Match Kit</h2>
+  <form id="kit-form">
+    <input type="text" placeholder="Team Name" required>
+    <input type="date" required>
+    <textarea placeholder="Starting Lineup"></textarea>
+    <textarea placeholder="Coach Notes"></textarea>
+    <button onclick="printMatchKit()">Print Kit</button>
+  </form>
+</section>
+<section id="player-timeline">
+  <h2>Development Timeline</h2>
+  <select id="timeline-player"></select>
+  <form id="timeline-form">
+    <input type="date" required>
+    <input type="text" placeholder="Milestone (e.g. 'Mastered 1v1')" required>
+    <button type="submit">Add Milestone</button>
+  </form>
+  <div id="timeline-log"></div>
+</section>
+<section id="drill-impact">
+  <h2>Drill Effectiveness</h2>
+  <select id="impact-drill">
+    <option value="C0.1A5">C0.1A5</option>
+    <option value="C0.2B3">C0.2B3</option>
+  </select>
+  <input type="number" placeholder="Impact Score (1–10)" required>
+  <button onclick="logDrillImpact()">Log Impact</button>
+  <div id="impact-log"></div>
+</section>
+<button onclick="exportTacticalPDF(selectedSession)">Export Tactical PDF</button>
+<section id="club-profile">
+  <h2>CMD Football Club Profile</h2>
+  <p><strong>Founded:</strong> 2021</p>
+  <p><strong>Teams:</strong> U7–U20</p>
+  <p><strong>Philosophy:</strong> Tactical clarity, emotional impact, and coach-grade systems.</p>
+  <ul>
+    <li>📊 Drill Analytics</li>
+    <li>🧠 Tactical Engine</li>
+    <li>🧾 Federation Reports</li>
+    <li>🎓 Coach Education</li>
+  </ul>
+</section>
+<section id="drill-feedback">
+  <h2>Drill Feedback</h2>
+  <select id="drill-select">
+    <option value="C0.1A5">C0.1A5</option>
+    <option value="C0.2B3">C0.2B3</option>
+  </select>
+  <select id="drill-rating">
+    <option value="5">⭐⭐⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="1">⭐</option>
+  </select>
+  <textarea id="drill-comment" placeholder="Coach feedback"></textarea>
+  <button onclick="submitDrillFeedback()">Submit</button>
+  <div id="drill-feedback-log"></div>
+</section>
+<section id="attendance-tracker">
+  <h2>Attendance Tracker</h2>
+  <form id="attendance-form">
+    <select id="attendance-player"></select>
+    <input type="date" required>
+    <select required>
+      <option value="On Time">On Time</option>
+      <option value="Late">Late</option>
+      <option value="Absent">Absent</option>
+    </select>
+    <button type="submit">Log Attendance</button>
+  </form>
+  <div id="attendance-log"></div>
+</section>
+<section id="tournament-manager">
+  <h2>Tournament Manager</h2>
+  <form id="match-form">
+    <input type="text" placeholder="Team A" required>
+    <input type="text" placeholder="Team B" required>
+    <input type="number" placeholder="Score A" required>
+    <input type="number" placeholder="Score B" required>
+    <button type="submit">Log Match</button>
+  </form>
+  <div id="match-log"></div>
+</section>
+<section id="session-builder">
+  <h2>Session Builder</h2>
+  <div id="drill-pool">
+    <div class="drill-block" draggable="true">C0.1A5</div>
+    <div class="drill-block" draggable="true">C0.2B3</div>
+  </div>
+  <div id="session-dropzone">Drop drills here</div>
+</section>
+<section id="motivation-tracker">
+  <h2>Player Goals</h2>
+  <form id="goal-form">
+    <select id="goal-player"></select>
+    <input type="text" placeholder="Goal (e.g. Improve left-foot passing)" required>
+    <input type="date" placeholder="Target Date" required>
+    <button type="submit">Save Goal</button>
+  </form>
+  <div id="goal-log"></div>
+</section>
+<section id="coach-chat">
+  <h2>Coach Messaging</h2>
+  <form id="chat-form">
+    <input type="text" placeholder="Your Name" required>
+    <textarea placeholder="Message to other coaches" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <div id="chat-log"></div>
+</section>
+<section id="season-archive">
+  <h2>Season Archive</h2>
+  <form id="archive-form">
+    <input type="text" placeholder="Season (e.g. 2025–2026)" required>
+    <button type="submit">Archive Current Data</button>
+  </form>
+  <div id="archive-log"></div>
+</section>
+<section id="export-wizard">
+  <h2>Federation Export</h2>
+  <form id="export-form">
+    <input type="text" placeholder="Club Name" required>
+    <input type="text" placeholder="Coach Name" required>
+    <select required>
+      <option value="Gold">Gold Branding</option>
+      <option value="Silver">Silver Branding</option>
+      <option value="Minimal">Minimal Branding</option>
+    </select>
+    <button type="submit">Generate Export</button>
+  </form>
+</section>
+<section id="highlight-builder">
+  <h2>Highlight Reel</h2>
+  <form id="highlight-form">
+    <select id="highlight-player"></select>
+    <input type="text" placeholder="Video URL or Clip ID" required>
+    <input type="text" placeholder="Stat (e.g. '2 goals')" required>
+    <textarea placeholder="Moment Description"></textarea>
+    <button type="submit">Add Highlight</button>
+  </form>
+  <div id="highlight-log"></div>
+</section>
+<section id="coach-eval">
+  <h2>Coach Evaluation</h2>
+  <form id="eval-form">
+    <input type="text" placeholder="Coach Name" required>
+    <input type="date" required>
+    <select required>
+      <option value="Excellent">Excellent</option>
+      <option value="Good">Good</option>
+      <option value="Needs Improvement">Needs Improvement</option>
+    </select>
+    <textarea placeholder="Mentorship Notes"></textarea>
+    <button type="submit">Log Evaluation</button>
+  </form>
+  <div id="eval-log"></div>
+</section>
+<section id="tactical-analyzer">
+  <h2>Tactical Style Analyzer</h2>
+  <button onclick="analyzeTactics()">Analyze Club Style</button>
+  <div id="tactical-summary"></div>
+</section>
+<section id="match-dashboard">
+  <h2>Match Day Dashboard</h2>
+  <input type="text" placeholder="Opponent">
+  <input type="date">
+  <textarea placeholder="Starting Lineup"></textarea>
+  <textarea placeholder="Coach Notes"></textarea>
+  <button onclick="launchMatchDashboard()">Launch</button>
+</section>
+<section id="chemistry-heatmap">
+  <h2>Player Chemistry Heatmap</h2>
+  <canvas id="chemistryCanvas" width="600" height="400"></canvas>
+</section>
+<section id="session-impact">
+  <h2>Session Impact Tracker</h2>
+  <form id="impact-form">
+    <input type="text" placeholder="Session ID or Title" required>
+    <input type="number" placeholder="Match Score Improvement (e.g. +2)" required>
+    <button type="submit">Log Impact</button>
+  </form>
+  <div id="impact-log"></div>
+</section>
+<section id="branding-editor">
+  <h2>Branding & Messaging</h2>
+  <form id="branding-form">
+    <input type="text" placeholder="Club Slogan" required>
+    <textarea placeholder="Emotional Message or Vision Statement"></textarea>
+    <button type="submit">Save Branding</button>
+  </form>
+  <div id="branding-log"></div>
+</section>
+<section id="tournament-kit">
+  <h2>Tournament Kit</h2>
+  <form id="kit-form">
+    <input type="text" placeholder="Tournament Name" required>
+    <textarea placeholder="Fixtures (Team A vs Team B)"></textarea>
+    <textarea placeholder="Coach Notes"></textarea>
+    <button onclick="printTournamentKit()">Print Kit</button>
+  </form>
+</section>
+<canvas id="radarChart" width="400" height="400"></canvas>
+<section id="drill-tagging">
+  <h2>Drill Tagging</h2>
+  <form id="tag-form">
+    <input type="text" placeholder="Drill ID (e.g. C0.1A5)" required>
+    <input type="text" placeholder="Tags (comma-separated)" required>
+    <button type="submit">Save Tags</button>
+  </form>
+  <div id="tag-log"></div>
+</section>
+<section id="tactical-dashboard">
+  <h2>Tactical Identity</h2>
+  <button onclick="renderTacticalIdentity()">Analyze</button>
+  <div id="tactical-identity-log"></div>
+</section>
+<section id="federation-export">
+  <h2>Federation Export Wizard</h2>
+  <form id="export-form">
+    <input type="text" placeholder="Club Name" required>
+    <input type="text" placeholder="Coach Name" required>
+    <select required>
+      <option value="Gold">Gold Branding</option>
+      <option value="Minimal">Minimal Branding</option>
+      <option value="Federation">Federation Standard</option>
+    </select>
+    <button type="submit">Generate Export</button>
+  </form>
+</section>
+<section id="drill-performance">
+  <h2>Player Drill Performance</h2>
+  <form id="performance-form">
+    <select id="player-select"></select>
+    <input type="text" placeholder="Drill ID (e.g. C0.1A5)" required>
+    <input type="number" placeholder="Score (1–10)" required>
+    <button type="submit">Log Performance</button>
+  </form>
+  <div id="performance-log"></div>
+</section>
+<section id="team-comparison">
+  <h2>Tactical Comparison</h2>
+  <form id="compare-form">
+    <input type="text" placeholder="Team A ID" required>
+    <input type="text" placeholder="Team B ID" required>
+    <button type="submit">Compare</button>
+  </form>
+  <div id="comparison-log"></div>
+</section>
+<section id="session-builder">
+  <h2>Session Builder</h2>
+  <div id="drill-pool">
+    <div class="drill-block" draggable="true">C0.1A5</div>
+    <div class="drill-block" draggable="true">C0.2B3</div>
+  </div>
+  <div id="session-dropzone">Drop drills here</div>
+</section>
+<section id="drill-dashboard">
+  <h2>Drill Effectiveness</h2>
+  <select id="drill-select">
+    <option value="C0.1A5">C0.1A5</option>
+    <option value="C0.2B3">C0.2B3</option>
+  </select>
+  <div id="drill-stats"></div>
+</section>
+<section id="dev-timeline">
+  <h2>Development Timeline</h2>
+  <select id="timeline-player"></select>
+  <form id="timeline-form">
+    <input type="date" required>
+    <input type="text" placeholder="Milestone (e.g. 'Mastered 1v1')" required>
+    <button type="submit">Add Milestone</button>
+  </form>
+  <div id="timeline-log"></div>
+</section>
+<section id="tactical-evolution">
+  <h2>Tactical Evolution</h2>
+  <button onclick="renderTacticalEvolution()">Analyze</button>
+  <div id="evolution-log"></div>
+</section>
+<section id="match-assistant">
+  <h2>Match Day Assistant</h2>
+  <form id="note-form">
+    <input type="text" placeholder="Minute (e.g. 23')" required>
+    <textarea placeholder="Tactical Note (e.g. 'Switch to 4-3-3')" required></textarea>
+    <button type="submit">Log Note</button>
+  </form>
+  <div id="note-log"></div>
+</section>
+<section id="session-impact">
+  <h2>Player Session Impact</h2>
+  <form id="impact-form">
+    <select id="impact-player"></select>
+    <input type="text" placeholder="Session ID or Title" required>
+    <input type="number" placeholder="Impact Score (1–10)" required>
+    <button type="submit">Log Impact</button>
+  </form>
+  <div id="impact-log"></div>
+</section>
+<section id="tactical-heatmap">
+  <h2>Tactical Style Heatmap</h2>
+  <canvas id="heatmapCanvas" width="600" height="400"></canvas>
+</section>
+<section id="coach-dashboard">
+  <h2>Live Coach Dashboard</h2>
+  <input type="text" placeholder="Opponent">
+  <input type="date">
+  <textarea placeholder="Starting Lineup"></textarea>
+  <textarea placeholder="Live Tactical Notes"></textarea>
+  <button onclick="launchCoachDashboard()">Launch</button>
+</section>
+
