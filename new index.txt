@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMD Football | Elevate Your Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="hero">
+    <div class="glass-card">
+      <img src="images/js/cmd-logo.jpg" alt="CMD Logo" class="logo" />
+      <h1>CMD Football</h1>
+      <p class="subtitle">Effort. Elevation. Excellence.</p>
+      <a href="coach-dashboard.html" class="btn">Enter Dashboard</a>
+    </div>
+  </section>
+
+  <section class="grid-section">
+    <div class="grid-item">
+      <h2>📊 Progress Tracking</h2>
+      <p>Track juggling levels, drill attempts, and growth metrics.</p>
+      <a href="progress-chart.html">View Charts</a>
+    </div>
+    <div class="grid-item">
+      <h2>🛠️ Drill Builder</h2>
+      <p>Design and assign drills with visual clarity and coach feedback.</p>
+      <a href="drill-builder.html">Build Drills</a>
+    </div>
+    <div class="grid-item">
+      <h2>🎓 Exam Entry</h2>
+      <p>Submit results, unlock levels, and celebrate effort.</p>
+      <a href="exam-entry.html">Submit Exam</a>
+    </div>
+    <div class="grid-item">
+      <h2>📋 Team Report</h2>
+      <p>Compare players, badges, and team-wide performance.</p>
+      <a href="team-report.html">View Report</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 CMD Football. Built for coaches, powered by effort.</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script>
+    const modified = new Date(document.lastModified);
+    document.getElementById("lastModified").innerText =
+      "Last updated: " + modified.toLocaleString();
+  </script>
+</body>
+</html>

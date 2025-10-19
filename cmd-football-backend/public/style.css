@@ -467,3 +467,238 @@ body {
 .player-card a {
   margin-right: 10px;
 }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.hero {
+  background: url('images/js/football-bg.jpg') center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  text-align: center;
+  color: white;
+  border-radius: 12px;
+}
+
+.hero-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.2em;
+  margin: 10px 0 30px;
+  font-style: italic;
+}
+
+.cta-button {
+  background: #ffcc00;
+  color: #002b5c;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #e6b800;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background: white;
+}
+
+.feature {
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature h2 {
+  color: #002b5c;
+}
+
+.feature a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.team-report {
+  text-align: center;
+  padding: 40px 20px;
+  background: #eef2f7;
+}
+
+.report-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #002b5c;
+  color: white;
+  font-size: 0.9em;
+}
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000; /* Changed to solid black */
+  color: #f0f0f0; /* Light text for contrast */
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('images/js/football-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.1);
+  max-width: 500px;
+  width: 90%;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.glass-card h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.glass-card .subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: #ffcc00;
+  color: #000000;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #e6b800;
+}
+
+/* Grid Section */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 80px 40px;
+  background-color: #111111; /* Dark background for grid */
+}
+
+.grid-item {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: #f0f0f0;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-item h2 {
+  color: #ffcc00;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.grid-item p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.grid-item a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #000000;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+  .glass-card h1 {
+    font-size: 2.2rem;
+  }
+
+  .glass-card .subtitle {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .grid-section {
+    padding: 40px 20px;
+  }
+}
