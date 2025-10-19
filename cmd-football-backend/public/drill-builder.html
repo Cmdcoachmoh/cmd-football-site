@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <header class="cmd-header">
+  <div class="logo-container">
+    <img src="assets/cmd-logo.png" alt="CMD Football Logo" class="cmd-logo">
+  </div>
+</header>
+  <title>Drill Builder</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>🛠️ Create New Drill</h1>
+  <form id="drillForm">
+    <input type="text" id="name" placeholder="Drill Name" required>
+    <textarea id="description" placeholder="Drill Description" required></textarea>
+    <input type="number" id="bonus" placeholder="Bonus Points" value="0">
+    <input type="number" id="malus" placeholder="Malus Points" value="0">
+    <input type="number" id="minLevel" placeholder="Min Juggling Level" value="1">
+    <button type="submit">Save Drill</button>
+  </form>
+  <div id="drillStatus"></div>
+  <script src="js/drill-builder.js"></script>
+</body>
+</html>

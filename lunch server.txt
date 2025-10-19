@@ -1,0 +1,1 @@
+java -cp target/cmd-football-backend-1.0-SNAPSHOT.jar com.cmdfootball.Server
