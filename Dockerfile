@@ -1,11 +1,13 @@
-FROM maven:3.9.6-eclipse-temurin-17
-
+# Stage 1: Build the project using Maven
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
-
 COPY . .
-
 WORKDIR /app/cmd-football-backend
+RUN mvn clean package -DskipTests
 
-RUN mvn clean install
-
-CMD ["mvn", "exec:java", "-Dexec.mainClass=com.cmdfootball.Server"]
+# Stage 2: Run the packaged Spring Boot app
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY --from=build /app/cmd-football-backend/target/cmd-football-backend-1.0.0.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
